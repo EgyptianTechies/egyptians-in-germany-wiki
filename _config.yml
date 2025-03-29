@@ -1,0 +1,42 @@
+title: المصريين في ألمانيا
+description: دليل المصريين في ألمانيا
+baseurl: ""
+url: "https://jaxfellow.github.io/egyptian-expats-wiki"
+theme: minima
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Arabic support
+locale: ar
+direction: rtl
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: "ar"
+
+# Navigation links in Arabic
+navigation:
+  - title: "الرئيسية"
+    url: "/"
+  - title: "الحياة في ألمانيا"
+    url: "/living-in-germany/"
+  - title: "العمل والدراسة"
+    url: "/work-and-study/"
+  - title: "المجتمع والثقافة"
+    url: "/community-and-culture/"
+  - title: "الأسئلة الشائعة"
+    url: "/faq-and-resources/"
+  - title: "المساهمة"
+    url: "/contributions/"
+
+# SEO configuration
+seo:
+  title: المصريين في ألمانيا
+  description: دليل المصريين في ألمانيا
+  author: مجتمع المصريين
+  lang: ar
+  twitter: username
+  facebook: username

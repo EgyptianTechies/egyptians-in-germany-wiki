@@ -1,0 +1,25 @@
+---
+---
+
+@import "minima";
+
+body {
+  direction: rtl;
+  font-family: "Noto Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.site-nav {
+  float: left;
+}
+
+.site-title {
+  float: right;
+}
+
+.post-meta {
+  text-align: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: right;
+}
