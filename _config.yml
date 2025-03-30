@@ -2,11 +2,17 @@ title: المصريين في ألمانيا
 description: دليل المصريين في ألمانيا
 baseurl: ""
 url: "https://jaxfellow.github.io/egyptian-expats-wiki"
-theme: minima
+theme: minimal-mistakes-jekyll
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap # Add sitemap plugin for better SEO
+
+# Minimal Mistakes settings
+minimal_mistakes_skin: "default"
+header_pages:
+  - index.md
 
 # Arabic support
 locale: ar
@@ -40,3 +46,5 @@ seo:
   lang: ar
   twitter: username
   facebook: username
+sitemap:
+  exclude: ["404.html"]

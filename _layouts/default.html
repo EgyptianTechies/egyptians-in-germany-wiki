@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "ar" }}" dir="rtl">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: site.title }}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-  </head>
-  <body>
-    {% include header.html %}
-    <main>
-      {{ content }}
-    </main>
-    {% include footer.html %}
-  </body>
-</html>
+---
+layout: single
+---
+<!-- Use Minimal Mistakes' single layout -->
