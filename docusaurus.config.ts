@@ -7,8 +7,8 @@ const config: Config = {
   tagline: 'دليلك الشامل للحياة والعمل في ألمانيا',
   favicon: 'img/favicon.ico',
 
-  url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  url: 'https://jaxfellow.github.io',
+  baseUrl: '/egyptians-in-germany-wiki/',
 
   organizationName: 'facebook',
   projectName: 'docusaurus',
