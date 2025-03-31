@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap');
+
+body {
+  direction: rtl;
+  font-family: "IBM Plex Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar__items {
+  justify-content: flex-end;
+}
+
+.navbar__link {
+  text-align: right;
+}
+
+.sidebar {
+  text-align: right;
+}
+
+.sidebar__item {
+  text-align: right;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  text-align: right;
+}
+
+.footer {
+  text-align: right;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, li, a {
+  font-family: "IBM Plex Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

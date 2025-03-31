@@ -1,0 +1,19 @@
+{
+  "name": "egyptians-in-germany-wiki",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "deploy": "docusaurus deploy"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.7.0",
+    "@docusaurus/preset-classic": "^3.7.0",
+    "clsx": "^1.2.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}

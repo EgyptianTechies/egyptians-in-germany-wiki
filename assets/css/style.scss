@@ -2,11 +2,11 @@
 
 body {
   direction: rtl;
-  font-family: "Noto Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "IBM Plex Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .site-nav {
-  float: left;
+  float: right;
 }
 
 .site-title {
@@ -17,6 +17,11 @@ body {
   text-align: right;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p, span, li, a {
+  text-align: right;
+  font-family: "IBM Plex Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p {
   text-align: right;
 }
