@@ -5,12 +5,15 @@
   "scripts": {
     "start": "docusaurus start",
     "build": "docusaurus build",
+    "clear": "docusaurus clear",
+    "swizzle": "docusaurus swizzle",
     "serve": "docusaurus serve",
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
     "@docusaurus/core": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
+    "@easyops-cn/docusaurus-search-local": "^0.49.2",
     "clsx": "^1.2.1",
     "prism-react-renderer": "^2.4.1",
     "react": "^18.0.0",

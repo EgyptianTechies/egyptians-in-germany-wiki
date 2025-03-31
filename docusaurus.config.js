@@ -4,8 +4,8 @@ module.exports = {
   title: 'المصريين في ألمانيا',
   tagline: 'دليل المصريين في ألمانيا',
   url: 'http://localhost:3000',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
+  baseUrl: '/', // Update this to match your hosting setup
+  onBrokenLinks: 'warn', // Change to 'ignore' or 'log' if necessary
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'egyptians-in-germany', // GitHub org/user name.
@@ -16,30 +16,52 @@ module.exports = {
     localeConfigs: {
       ar: {
         direction: 'rtl',
+        htmlLang: 'ar-EG',
+        label: 'العربية',
       },
     },
   },
   themeConfig: {
     navbar: {
-      title: 'المصريين في ألمانيا',
+      title: 'Egyptians in Germany',
+      logo: {
+        alt: 'Wiki Logo',
+        src: 'img/logo.svg',
+      },
       items: [
-        { to: '/docs/intro', label: 'الرئيسية', position: 'left' },
-        { to: '/docs/living-in-germany', label: 'الحياة في ألمانيا', position: 'left' },
-        { to: '/docs/work-and-study', label: 'العمل والدراسة', position: 'left' },
-        { to: '/docs/community-and-culture', label: 'المجتمع والثقافة', position: 'left' },
-        { to: '/docs/faq-and-resources', label: 'الأسئلة الشائعة', position: 'left' },
-        { to: '/docs/contributions', label: 'المساهمة', position: 'left' },
+        { to: '/docs/intro', label: 'Docs', position: 'left' },
+        { to: '/blog', label: 'Blog', position: 'left' },
+        {
+          href: 'https://github.com/your-org/egyptians-in-germany-wiki',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
-      style: 'primary', // Optional: Ensure proper styling for RTL
     },
     footer: {
       style: 'dark',
-      copyright: `&copy; 2023 المصريين في ألمانيا. جميع الحقوق محفوظة.`,
+      links: [
+        {
+          title: 'Docs',
+          items: [{ label: 'Introduction', to: '/docs/intro' }],
+        },
+        {
+          title: 'Community',
+          items: [
+            { label: 'GitHub', href: 'https://github.com/your-org/egyptians-in-germany-wiki' },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Egyptians in Germany. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    customScript: `
+      document.documentElement.setAttribute('dir', 'rtl');
+    `,
+    breadcrumbs: true, // Enable breadcrumbs navigation
   },
   presets: [
     [
@@ -54,6 +76,18 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+      },
+    ],
+  ],
+  plugins: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['ar'], // Set the language to Arabic
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: true,
       },
     ],
   ],
