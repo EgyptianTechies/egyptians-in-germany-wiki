@@ -10,7 +10,7 @@ const config: Config = {
   url: 'https://jaxfellow.github.io',
   baseUrl: '/egyptians-in-germany-wiki/',
 
-  organizationName: 'egyptiantsTechies',
+  organizationName: 'jaxfellow',
   projectName: 'egyptians-in-germany-wiki',
 
   onBrokenLinks: 'warn',
