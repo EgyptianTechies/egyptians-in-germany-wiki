@@ -10,10 +10,10 @@ const config: Config = {
   url: 'https://jaxfellow.github.io',
   baseUrl: '/egyptians-in-germany-wiki/',
 
-  organizationName: 'facebook',
-  projectName: 'docusaurus',
+  organizationName: 'egyptiantsTechies',
+  projectName: 'egyptians-in-germany-wiki',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
