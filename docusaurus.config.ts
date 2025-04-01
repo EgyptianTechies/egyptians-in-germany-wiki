@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'دليل الحياة في ألمانيا',
   tagline: 'دليلك الشامل للحياة والعمل في ألمانيا',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   url: 'https://jaxfellow.github.io',
   baseUrl: '/egyptians-in-germany-wiki/',
@@ -28,7 +28,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/jaxfellow/egyptians-in-germany-wiki/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/jaxfellow/egyptians-in-germany-wiki/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -37,7 +37,7 @@ const config: Config = {
             xslt: true,
           },
           editUrl:
-            'https://github.com/jaxfellow/egyptians-in-germany-wiki/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/jaxfellow/egyptians-in-germany-wiki/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
