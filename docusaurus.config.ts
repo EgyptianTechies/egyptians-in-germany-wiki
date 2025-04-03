@@ -7,10 +7,10 @@ const config: Config = {
   tagline: 'دليلك الشامل للحياة والعمل في ألمانيا',
   favicon: 'img/favicon.png',
 
-  url: 'https://jaxfellow.github.io',
-  baseUrl: '/egyptians-in-germany-wiki/',
+  url: 'https://EgyptianTechies.github.io',
+  baseUrl: '/',
 
-  organizationName: 'jaxfellow',
+  organizationName: 'EgyptianTechies',
   projectName: 'egyptians-in-germany-wiki',
 
   onBrokenLinks: 'warn',
@@ -26,26 +26,34 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/jaxfellow/egyptians-in-germany-wiki/tree/main/',
+            'https://github.com/EgyptianTechies/egyptians-in-germany-wiki/tree/main',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl:
-            'https://github.com/jaxfellow/egyptians-in-germany-wiki/tree/main/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  themes: [
+    // ... Your other themes.
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        hashed: true,
+        indexBlog: false,
+        indexDocs: true,
+        docsRouteBasePath: "/",
+        searchBarPosition: "right",
+        language: ["ar"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      }),
     ],
   ],
 
@@ -65,7 +73,7 @@ const config: Config = {
           label: 'الدليل',
         },
         {
-          href: 'https://github.com/jaxfellow/egyptians-in-germany-wiki',
+          href: 'https://github.com/EgyptianTechies/egyptians-in-germany-wiki',
           label: 'GitHub',
           position: 'right',
         },
@@ -79,7 +87,7 @@ const config: Config = {
           items: [
             {
               label: 'مقدمة',
-              to: '/docs/intro',
+              to: '/intro',
             },
           ],
         },
@@ -93,7 +101,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `حقوق النشر © ${new Date().getFullYear()} دليل الحياة في ألمانيا. مبني باستخدام Docusaurus.`,
+      copyright: `دليل الحياة في ألمانيا مرخص برخصة <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> © ومبني باستخدام Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
