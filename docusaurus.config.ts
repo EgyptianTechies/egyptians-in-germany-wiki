@@ -30,6 +30,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl:
             'https://github.com/EgyptianTechies/egyptians-in-germany-wiki/tree/main',
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
