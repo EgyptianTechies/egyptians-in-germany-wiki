@@ -6,7 +6,7 @@ Welcome to the **Egyptians in Germany Wiki**! 🎉 This is a **community-driven 
 This project is a **revival** of our old community wiki, now hosted on **GitHub Pages** and powered by **Docusaurus**. Thanks to all the maintainers and contributors who initiated and continue to support this initiative! 🚀
 
 ## 🔗 **Live Website**
-➡️ [Visit the Wiki](https://EgyptianTechies.github.io/egyptians-in-germany-wiki/)
+➡️ [Visit the Wiki](https://egyptians-in-germany.de)
 
 ## 🤝 How to Contribute?
 We encourage everyone to contribute! If you find outdated or missing information, please help us improve it.
