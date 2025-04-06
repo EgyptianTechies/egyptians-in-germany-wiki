@@ -87,13 +87,29 @@ const config: Config = {
           title: 'الدليل',
           items: [
             {
-              label: 'مقدمة',
-              to: '/intro',
+              label: 'قبل القدوم إلى ألمانيا', 
+              to: '/before-germany',
+            },
+            {
+              label: 'الحياة في ألمانيا',
+              to: '/living-in-germany',
+            },
+            {
+              label: 'الأسرة في ألمانيا',
+              to: '/family-in-germany',
+            },
+            {
+              label: 'العمل في ألمانيا',
+              to: '/work-in-germany',
+            },
+            {
+              label: 'مغادرة ألمانيا',
+              to: '/leave-germany',
             },
           ],
         },
         {
-          title: 'المجتمع',
+          title: 'انضم إلينا',
           items: [
             {
               label: 'Facebook',
@@ -101,6 +117,15 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'ادعمنا',
+          items: [
+            {
+              label: 'Open Collective',
+              href: 'https://opencollective.com/egyptian-techies-berlin',
+            },
+          ]
+        }
       ],
       copyright: `دليل الحياة في ألمانيا مرخص برخصة <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> © ومبني باستخدام Docusaurus.`,
     },
