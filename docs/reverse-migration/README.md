@@ -4,7 +4,6 @@ sidebar_position: 99
 description: تفاصيل عن الهجرة من ألمانيا لبلاد أخرى
 ---
 
-## إسبانيا
-## الإمارات
-## السعودية
-## مصر
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
