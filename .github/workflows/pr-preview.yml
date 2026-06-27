@@ -1,0 +1,127 @@
+---
+name: PR Preview Deployment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  deploy-preview:
+    if: github.event.action != 'closed'
+    name: Deploy PR Preview
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website with custom baseUrl
+        env:
+          BASE_URL: /pr-${{ github.event.pull_request.number }}/
+        run: npm run build
+
+      - name: Deploy to gh-pages subdirectory
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Clone gh-pages branch
+          git clone --branch gh-pages --single-branch https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages-deploy
+
+          # Create/clear PR subdirectory
+          mkdir -p gh-pages-deploy/pr-${{ github.event.pull_request.number }}
+          rm -rf gh-pages-deploy/pr-${{ github.event.pull_request.number }}/*
+
+          # Copy build to subdirectory
+          cp -r build/* gh-pages-deploy/pr-${{ github.event.pull_request.number }}/
+
+          # Commit and push
+          cd gh-pages-deploy
+          git add .
+          git commit -m "Deploy preview for PR #${{ github.event.pull_request.number }}" || echo "No changes to commit"
+          git push origin gh-pages
+
+      - name: Create or update PR comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const previewUrl = `https://egyptians-in-germany.de/pr-${prNumber}/`;
+            const commitSha = context.payload.pull_request.head.sha.substring(0, 7);
+            const deployTime = new Date().toUTCString();
+
+            const commentBody = `## 🚀 PR Preview
+
+            **Preview URL:** ${previewUrl}
+            **Last deployed:** ${deployTime}
+            **Commit:** ${commitSha}`;
+
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+
+            const botComment = comments.find(comment =>
+              comment.user.type === 'Bot' &&
+              comment.body.includes('PR Preview')
+            );
+
+            if (botComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: commentBody,
+              });
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: commentBody,
+              });
+            }
+
+      - name: Create GitHub Environment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const previewUrl = `https://egyptians-in-germany.de/pr-${prNumber}/`;
+
+            // Note: GitHub Environments are automatically created when deployments reference them
+            // This step creates a deployment status for tracking
+            const deployment = await github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.payload.pull_request.head.sha,
+              environment: `pr-preview-${prNumber}`,
+              auto_merge: false,
+              required_contexts: [],
+              transient_environment: true,
+              production_environment: false,
+            });
+
+            if (deployment.data) {
+              await github.rest.repos.createDeploymentStatus({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                deployment_id: deployment.data.id,
+                state: 'success',
+                environment_url: previewUrl,
+              });
+            }
+

@@ -8,7 +8,7 @@ const config: Config = {
   favicon: 'img/favicon.png',
 
   url: 'https://EgyptianTechies.github.io',
-  baseUrl: '/',
+  baseUrl: process.env.BASE_URL || '/',
 
   organizationName: 'EgyptianTechies',
   projectName: 'egyptians-in-germany-wiki',
