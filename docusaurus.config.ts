@@ -58,6 +58,20 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/family-in-germany/children/pregnancy-and-childbirth',
+            to: '/family-in-germany/childbirth-in-germany-and-residence-permit-for-newborn',
+          },
+        ],
+      },
+    ],
+  ],
+
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
