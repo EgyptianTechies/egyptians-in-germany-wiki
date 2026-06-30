@@ -64,8 +64,8 @@ const config: Config = {
       {
         redirects: [
           {
-            from: '/family-in-germany/children/pregnancy-and-childbirth',
-            to: '/family-in-germany/childbirth-in-germany-and-residence-permit-for-newborn',
+            from: '/family-in-germany/childbirth-in-germany-and-residence-permit-for-newborn',
+            to: '/family-in-germany/children/pregnancy-and-childbirth',
           },
         ],
       },
