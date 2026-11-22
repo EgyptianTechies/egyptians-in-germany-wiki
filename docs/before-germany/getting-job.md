@@ -41,6 +41,7 @@
 - [وظائف في شركات ناشئة في برلين](http://berlinstartupjobs.com)  
 - [وظائف في شركات ناشئة في ميونخ](http://blog.honeypot.io/munich-tech-map)  
 - [Job Spotting](http://jobspotting.com): موقع مميز يتيح لك تحديد المواصفات التي تبحث عنها، ويرسل لك الوظائف المناسبة بشكل دوري.
+- [EuroJobs.ai](https://eurojobs.ai/jobs/countries/germany): وظائف IT في ألمانيا من مواقع التوظيف الخاصة بالشركات نفسها، مع فلاتر لرعاية التأشيرة (visa sponsorship) والوظائف باللغة الإنجليزية.
 
 ---
 
